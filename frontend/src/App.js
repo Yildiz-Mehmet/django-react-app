@@ -23,7 +23,7 @@ class App extends Component {
 
   refreshList = () => {
     axios //Axios to send and receive HTTP requests
-      .get("http://localhost:8000/api/tasks/")
+      .get("http://127.0.0.1:8000/api/tasks/")
       .then((res) => this.setState({ taskList: res.data }))
       .catch((err) => console.log(err));
   };
@@ -108,20 +108,20 @@ class App extends Component {
     if (item.id) {
       // if old post to edit and submit
       axios
-        .put(`http://localhost:8000/api/tasks/${item.id}/`, item)
+        .put(`http://127.0.0.1:8000/api/tasks/${item.id}/`, item)
         .then((res) => this.refreshList());
       return;
     }
     // if new post to submit
     axios
-      .post("http://localhost:8000/api/tasks/", item)
+      .post("http://127.0.0.1:8000/api/tasks/", item)
       .then((res) => this.refreshList());
   };
 
   // Delete item
   handleDelete = (item) => {
     axios
-      .delete(`http://localhost:8000/api/tasks/${item.id}/`)
+      .delete(`http://127.0.0.1:8000/api/tasks/${item.id}/`)
       .then((res) => this.refreshList());
   };
   // handleDelete = item => {//add this after modal creation
