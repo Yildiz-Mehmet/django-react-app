@@ -102,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ORIGIN_WHITELIST =('http://localhost:3000')
+CORS_ORIGIN_WHITELIST =['http://localhost:3000']
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
